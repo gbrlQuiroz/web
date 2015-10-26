@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" ng-app="agendar">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Agendar Audiencia</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <style>
+        .row-centered {
+            text-align: center;
+        }
+
+        .col-centered {
+            display: inline-block;
+            float: none;
+            text-align: left;
+            margin-right: -4px;
+        }
+        /*
+        div {
+            background-color: #fff;
+
+            border: 1px solid red;
+
+        }
+
+        body {
+            background-color: #C0C0C0;
+        }
+        */
+        .css-form input.ng-invalid.ng-dirty {
+            background-color: #FF0000;
+        }
+
+        .css-form input.ng-valid.ng-dirty {
+            background-color: #78FA89;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row-centered">
+            <div class="col col-centered">
+                <h2>Secretaría de Contraloría y Transparencia Gubernamental</h2>
+                <h3 class="row-centered">Lic. Flor de María López González</h3>
+                <div ng-controller="datosEntController">
+                    <form novalidate class="css-form" name="frmDatos">
+                        <legend class="text-success bg-success">Audiencia ---&gt; Agendar </legend>
+                        <legend class="text-success bg-info text-right">
+                            <h3>{{informa}}</h3>
+                        </legend>
+                        <div class="form-group form-inline">
+                            <label for="folio">Núm. de Folio</label>
+                            <input type="number" class="form-control" id="folio" placeholder="99999" ng-model="datos.NumFolio" required />
+                            <label for="fecha">Fecha</label>
+                            <input type="date" class="form-control" id="fecha" placeholder="Fecha" ng-model="datos.Fecha" required />
+                            <label for="hora">Hora</label>
+                            <input type="time" class="form-control" id="hora" placeholder="Hora" ng-model="datos.Hora" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre(s) Ap-Paterno Ap-Materno" ng-model="datos.Nombre" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="dependencia">Organización/Dependencia</label>
+                            <input type="text" class="form-control" id="dependencia" placeholder="SCyTG" ng-model="datos.Dependencia" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="cargo">Cargo</label>
+                            <input type="text" class="form-control" id="cargo" placeholder="Secretario/Director/Encargado" ng-model="datos.Cargo" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="municipio">Municipio</label>
+                            <input type="text" class="form-control" id="municipio" placeholder="Pachuca" ng-model="datos.Municipio" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" class="form-control" id="telefono" placeholder="(999)999-99-99" ng-model="datos.Telefono" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="asunto">Asunto</label>
+                            <textarea class="form-control" id="asunto" rows="3" ng-model="datos.Asunto"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="estatus">Visita a</label>
+                            <select class="form-control" ng-model="datos.Visita" required>
+                                <option value="Lic. Flor de María López González" selected>Lic. Flor de María López González</option>
+                                <option value="Lic. Jaime L. Mejía Sánchez">Lic. Jaime L. Mejía Sánchez</option>
+                                <option value="Ing. L. Liliana Vega Tapia">Ing. L. Liliana Vega Tapia</option>
+                            </select>
+                        </div>
+                        <button ng-click="frmDatos.$valid && salvar(datos)" ng-disabled="isDisabled" ng-model="isDisabled" class="btn btn-success btn-lg btn-block">A g e n d a r !</button>
+            
+                    </form>
+                </div>
+                <!--controller-->
+            </div>
+            <!--col col-centered-->
+        </div>
+        <!--row row-centered-->
+    </div>
+    <!--container-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="../scripts/agendar.js"></script>
+</body>
+
+</html>
