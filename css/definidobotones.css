@@ -1,0 +1,46 @@
+h3 {
+    color:darkorange;
+    text-align: center;
+}
+
+body {
+	color:darkorange;
+    text-align: center;
+    
+}
+
+p.encabezado {
+	position: relative;
+}
+
+.centrardiv {
+	text-align: center;
+}
+
+p.pie {
+	position: relative;
+}
+input[type="text"]:focus:invalid {
+	border: 1px solid green;
+	box-shadow: 0 0 5px green;
+}
+
+input[type="email"]:focus:invalid {
+	border: 1px solid green;
+	box-shadow: 0 0 5px green;
+}
+
+input[type="number"]:focus:invalid {
+	border: 1px solid green;
+	box-shadow: 0 0 5px green;
+}
+
+.help-block {
+	background-color: #ededed;
+	border-color: #ededed;
+	margin-top: 10px;
+	margin-botton: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-align: justify;
+}
