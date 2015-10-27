@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="personal" lang="es">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Citas</title>
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<title>Datos Personales</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="css/definidobotones.css" rel="stylesheet">
 	<link href="css/otroboton.css" rel="stylesheet">
-    <script src="css/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="jquery.js"></script>
+    <script scr="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  
 </head>
 
 <body>
@@ -25,29 +24,33 @@
   <h3>Datos</h3>
     
 <!--Captura de datos-->
+    {{informa}}
+<div ng-controller="meController">
+  <form novalidate class="css-form" name="frmdatitos">
+
         <div class="tab-content">
 					<div class="row">
 						<div class="col-lg-offset-3">
 							<div class="col-lg-8">
 								<div class="form-group col-lg-12">
-									<label> Nombre </label>
-									<input type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" maxlength="40" data-content="Introduzca nombre y apellidos" required/>
+									<label> Nombre </label>                         
+									<input type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" maxlength="40" data-content="Introduzca nombre y apellidos" ng-model="datitos.Nombre" required/>
 								</div>
 								<div class="form-group col-lg-6">
 									<label>Fecha de nacimiento </label>
-									<input type="date" class="form-control" maxlength="13" minlength="13" placeholder="" required/>
+									<input type="date" class="form-control" ng-model="datitos.Fecha" placeholder="" required/>
 								</div>
                                 <div class="form-group col-lg-6">
 									<label> Estatura </label>
-									<input type="text" class="form-control" maxlength="13" minlength="13" placeholder="" required/>
+									<input type="text" class="form-control" maxlength="10" minlength="0" ng-model="datitos.Estatura" placeholder="" required/>
 								</div>
                                 <div class="form-group col-lg-6">
-									<label>Peso </label>
-									<input type="text" class="form-control" maxlength="13" minlength="13" placeholder="" required/>
+									<label> Peso </label>
+									<input type="text" class="form-control" maxlength="10" minlength="0" ng-model="datitos.Peso"  placeholder="" required/>
 								</div>
                                 <div class="form-group col-lg-6">
 									<label> Titulo </label>
-									<input type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" maxlength="40" data-content="" required/>
+									<input type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();" maxlength="40" data-content="" ng-model="datitos.Titulo" required/>
                                 </div>
                             </div>
                         </div>
@@ -56,16 +59,19 @@
    
     
       <!-- Y PARA EL BOTON Y EL PIE -->
-                                
-        <button type="submit" class="btn btn-ttc center-block"> Guardar datos </button>
+                                 <button type="submit" class="btn btn-tcc center-block" ng-click="frmdatitos.$valid && salvar(datitos)" ng-disabled="isDisabled" ng-model="isDisabled">Guardar datos </button>
+                       
+    <!--    <button type="submit" class="btn btn-ttc center-block"> Guardar datos </button>-->
     <br>
     
            <p class="pie "></p>
                <div class="centrardiv"><img src="img/Pie.jpg" alt="" /></div>
 
-                        
-            <script src="js/jquery-2.1.4.min.js "></script>
-            <script src="js/bootstrap.min.js "></script>
-   
-    </body>
+    </form> 
+    
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+            <script src="js/personal.js"></script>
+            
+    </div>
+  </body>
 </html>

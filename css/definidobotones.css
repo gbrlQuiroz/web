@@ -35,12 +35,11 @@ input[type="number"]:focus:invalid {
 	box-shadow: 0 0 5px green;
 }
 
-.help-block {
-	background-color: #ededed;
-	border-color: #ededed;
-	margin-top: 10px;
-	margin-botton: 10px;
-	margin-left: 5px;
-	margin-right: 5px;
-	text-align: justify;
-}
+
+.css-form input.ng-invalid.ng-dirty {
+            background-color:red;
+        }
+
+        .css-form input.ng-valid.ng-dirty {
+            background-color:greenyellow;
+        }

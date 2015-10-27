@@ -7,18 +7,17 @@
 	background-color: #ff8800;
 	font-size: 15px;
 }
-
-<!--Aplicar gradientes de colores a voluntad
+<!--Aplicar gradientes de colores a voluntad-->
 .btn-ttc {
 	background-repeat: repeat-x;
 	background-image: linear-gradient(top, 0%, 100%);
 }
 
-<!-- Estilo del estado:hover del botón .btn-ttc:hover {
+//-Estilo del estado:hover del botón// 
+.btn-ttc:hover {
 	background-position: 0 50px;
 }
-
---> .btn-ttc {
+ .btn-ttc {
 	margin-top: 10px;
 	width: 180px;
 	height: 40px;
