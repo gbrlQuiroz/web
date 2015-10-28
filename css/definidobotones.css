@@ -1,4 +1,4 @@
-h3 {
+h5,h3 {
     color:darkorange;
     text-align: center;
 }
@@ -21,25 +21,23 @@ p.pie {
 	position: relative;
 }
 input[type="text"]:focus:invalid {
-	border: 1px solid green;
-	box-shadow: 0 0 5px green;
+	border: 1px solid #91e842;
+	box-shadow: 0 0 5px #91e842;
 }
 
 input[type="email"]:focus:invalid {
-	border: 1px solid green;
-	box-shadow: 0 0 5px green;
+	border: 1px solid #91e842;
+	box-shadow: 0 0 5px #91e842;
 }
 
 input[type="number"]:focus:invalid {
-	border: 1px solid green;
-	box-shadow: 0 0 5px green;
+	border: 1px solid #91e842;
+	box-shadow: 0 0 5px #91e842;
 }
-
-
 .css-form input.ng-invalid.ng-dirty {
-            background-color:red;
+            background-color:#f85032;
         }
 
-        .css-form input.ng-valid.ng-dirty {
-            background-color:greenyellow;
+.css-form input.ng-valid.ng-dirty {
+            background-color:#91e842;
         }

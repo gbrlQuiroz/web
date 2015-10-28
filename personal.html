@@ -5,16 +5,17 @@
         <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Datos Personales</title>
-                <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-                    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-                        <link href="css/definidobotones.css" rel="stylesheet">
-                            <link href="css/otroboton.css" rel="stylesheet">
-                                <script scr="js/bootstrap.min.js"></script>
-                                <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+                <link href="css/lib/bootstrap.min.css" rel="stylesheet" media="screen">
+                <link href="css/lib/bootstrap-theme.min.css" rel="stylesheet">
+                <link href="css/definidobotones.css" rel="stylesheet">
+                <link href="css/otroboton.css" rel="stylesheet">
+                <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+                <script src="js/lib/bootstrap.min.js"></script>
+                
 
-                                </head>
+    </head>
 
-                            <!-- ************los atributos de tu modelo deben ser:  nombre, fecNac, estatura, peso, titulo; tal como estan escritos -->
+                            <!-- ************los atributos de tu modelo deben ser:  nombre, fecNac, estatura, peso, titulo; tal como estan escritos/ Se realizo el cambio  -->
 
                                 <body>
                                     <div>
@@ -22,38 +23,43 @@
                                         <div class="centrardiv"><img src="img/encabezado.png" alt="" />
                                         </div>
                                     </div>
-
+                                    
+                                   <div class="text-success bg-info text-right">
+                                        <h5> {{entro}} </h5>
+                                    </div>        
+                                    
+                                    
                                     <h3>Datos</h3>
 
                                     <!--Captura de datos-->
-                                    {{informa}}
+                                    
                                     <div ng-controller="meController">
-                                        <!-- ************ el nombre del formulario llva el prefijo "frm" -->
-                                        <form novalidate class="css-form" name="frmdatitos">
-
-                                            <div class="tab-content">
+                                      
+                                        <!-- ************ el nombre del formulario lleva el prefijo "frm" -->
+                                        <form novalidate class="css-form" name="frmDatitos">
+                                           <div class="tab-content">
                                                 <div class="row">
                                                     <div class="col-lg-offset-3">
                                                         <div class="col-lg-8">
                                                             <div class="form-group col-lg-12">
                                                                 <label> Nombre </label>                         
-                                                                <input type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value = this.value.toUpperCase();" maxlength="40" data-content="Introduzca nombre y apellidos" ng-model="datitos.Nombre" required/>
+                                                                <input type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value = this.value.toUpperCase();" maxlength="40" data-content="Introduzca nombre y apellidos" ng-model="datitos.nombre" required/>
                                                             </div>
                                                             <div class="form-group col-lg-6">
                                                                 <label>Fecha de nacimiento </label>
-                                                                <input type="date" class="form-control" ng-model="datitos.Fecha" placeholder="" required/>
+                                                                <input type="date" class="form-control" ng-model="datitos.fecNac" placeholder="" required/>
                                                             </div>
                                                             <div class="form-group col-lg-6">
                                                                 <label> Estatura </label>
-                                                                <input type="text" class="form-control" maxlength="10" minlength="0" ng-model="datitos.Estatura" placeholder="" required/>
+                                                                <input type="text" class="form-control" maxlength="10" minlength="0" ng-model="datitos.estatura" placeholder="" required/>
                                                             </div>
                                                             <div class="form-group col-lg-6">
                                                                 <label> Peso </label>
-                                                                <input type="text" class="form-control" maxlength="10" minlength="0" ng-model="datitos.Peso"  placeholder="" required/>
+                                                                <input type="text" class="form-control" maxlength="10" minlength="0" ng-model="datitos.peso"  placeholder="" required/>
                                                             </div>
                                                             <div class="form-group col-lg-6">
                                                                 <label> Titulo </label>
-                                                                <input type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value = this.value.toUpperCase();" maxlength="40" data-content="" ng-model="datitos.Titulo" required/>
+                                                                <input type="text" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value = this.value.toUpperCase();" maxlength="40" data-content="" ng-model="datitos.titulo" required/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -62,7 +68,7 @@
 
 
                                             <!-- Y PARA EL BOTON Y EL PIE -->
-                                            <button type="submit" class="btn btn-tcc center-block" ng-click="frmdatitos.$valid && salvar(datitos)" ng-disabled="isDisabled" ng-model="isDisabled">Guardar datos </button>
+                                            <button type="submit" class="btn btn-tcc center-block" ng-click="frmDatitos.$valid && salvar(datitos)" ng-disabled="isDisabled" ng-model="isDisabled">Guardar datos </button>
 
                                             <!--    <button type="submit" class="btn btn-ttc center-block"> Guardar datos </button>-->
                                             <br>
