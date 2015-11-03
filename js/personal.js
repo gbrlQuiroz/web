@@ -4,10 +4,10 @@
     app.factory('RESTful', ['$http', function ($http) {
             var response = {};
             response.getDatos = function () {
-                return $http.get('api/datos/1');
+                return $http.get('api/datos/1'); //Obtiene un solo registro 
             };
             response.postDatos = function (datos) {
-                return $http.post('', datos);
+                return $http.post('api/datos', datos);
             };
             return response;
         }]);
@@ -28,15 +28,18 @@
             ;
 
             $scope.salvar = function (datitos) {
-                $scope.informa = "entro al método salvar";
-                //console.log('datitos.nombre:' + datitos.nombre);
+                $scope.informa = 'entro al método salvar';
+                //console.log('entro al método salvar');
+                RESTful.postDatos(datitos)
+                        .success(function (data, status) {
+                            $scope.informa = 'se almacenó el registro';
+                            //console.log('se almacenó el registro');
 
-
+                        }).error(function (data, status) {
+                    $scope.informa = 'falló la agregacion del registro';
+                    //console.log('falló la agregación del registro');
+                });
             };
-            $scope.informa = 'Hola';
-
-
-
         }]);
 
 })();
