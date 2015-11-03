@@ -1,4 +1,4 @@
-(function () {
+    (function () {
     var app = angular.module('agendar', []);
 
     app.factory('cargaFactory', ['$http', function ($http) {
