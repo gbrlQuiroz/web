@@ -13,6 +13,11 @@ p.encabezado {
 	position: relative;
 }
 
+.bg-info {
+  background-color:chocolate;
+  text-align: right;    
+}
+
 .centrardiv {
 	text-align: center;
 }
@@ -21,23 +26,23 @@ p.pie {
 	position: relative;
 }
 input[type="text"]:focus:invalid {
-	border: 1px solid #91e842;
-	box-shadow: 0 0 5px #91e842;
+	border: 1px solid #ff920a;
+	box-shadow: 0 0 5px #ff920a;
 }
 
 input[type="email"]:focus:invalid {
-	border: 1px solid #91e842;
-	box-shadow: 0 0 5px #91e842;
+	border: 1px solid #ff920a;
+	box-shadow: 0 0 5px #ff920a;
 }
 
 input[type="number"]:focus:invalid {
-	border: 1px solid #91e842;
-	box-shadow: 0 0 5px #91e842;
+	border: 1px solid #ff920a;
+	box-shadow: 0 0 5px #ff920a;
 }
 .css-form input.ng-invalid.ng-dirty {
-            background-color:#f85032;
+            background-color:crimson;
         }
 
 .css-form input.ng-valid.ng-dirty {
-            background-color:#91e842;
+            background-color:darkkhaki;
         }

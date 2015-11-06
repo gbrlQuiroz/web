@@ -17,26 +17,50 @@
 
                             <!-- ************los atributos de tu modelo deben ser:  nombre, fecNac, estatura, peso, titulo; tal como estan escritos/ Se realizo el cambio  -->
 
-                                <body>
-                                    <div>
-                                        <p class="encabezado"></p>
-                                        <div class="centrardiv"><img src="img/encabezado.png" alt="" />
-                                        </div>
-                                    </div>
-                                   <!-- ++++++++++++ Utiliza un "alarm" de bootstrap y metelo en el controlador, para que funcione ---> 
+     <body>
+         <div>
+             <p class="encabezado"></p>
+                <div class="centrardiv"><img src="img/encabezado.png" alt="" /></div>
+         </div>                           
+                                    
+                                   <!-- ++++++++++++ Utiliza un "alarm" de bootstrap y metelo en el controlador, para que funcione 
                                    <div class="text-success bg-info text-right">
-                                        <h5> {{entro}} </h5>
-                                    </div>        
+                                        <h5> {{informa}} </h5>
+                                    </div>   -->     
                                     
-                                    
-                                    <h3>Datos</h3>
+                <h3>Registrar Datos</h3>
 
-                                    <!--Captura de datos-->
+                                     
                                     
-                                    <div ng-controller="meController">
-                                      
-                                        <!-- ************ el nombre del formulario lleva el prefijo "frm" -->
-                                        <form novalidate class="css-form" name="frmDatitos">
+        <div ng-controller="meController">
+                                        
+             <form novalidate class="css-form" name="frmDatitos">
+                       <div class="tab-content">
+                           <div class="col-lg-offset-3">
+                              <div class="col-lg-8">
+                                 <div class="form-group col-lg-4">
+                                   <label> ID </label>
+                                     <input type="text" class="form-control" maxlength="10" ng-model="datitos.ID" placeholder="Escriba su Clave de Identificación" required/>
+                                 </div>
+                            
+                                     <div class="col-xs-6 col-sm-6">
+                                   <button type="submit" class="btn btn-tcc" data-toggle="modal" data-target="#miModal" ng-click="frmDatitos.$valid && obtener(datitos)" ng-disabled="isDisabled" ng-model="isDisabled"> Obtener Datos </button>
+                                 </div>      
+                               </div>
+                           </div>
+                 </div>
+            </form>    
+            
+                                   
+                                   
+                                   
+                 <!-- ++++++++++++ Utiliza un "alarm" de bootstrap y metelo en el controlador, para que funcione /okis 03/11/2015 ---> 
+                                   
+                                <!-- ************ el nombre del formulario lleva el prefijo "frm" --> 
+            
+            <!--Formulario captura de datos-->
+            
+                                    <form novalidate class="css-form" name="frmDatitos">
                                            <div class="tab-content">
                                                 <div class="row">
                                                     <div class="col-lg-offset-3">
@@ -65,24 +89,55 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                         <br>
+
+<!--Trigger el modal con el botón -->   
+                                        
+                                        
+<button type="submit" class="btn btn-tcc left-block" ng-click="frmDatitos.$valid && salvar(datitos)" ng-disabled="isDisabled" ng-model="isDisabled">Guardar datos </button>
+                                        
+    <!-- Modal -->                    
+         <div class="modal fade" id="miModal" role="dialog">
+             <div class="modal-dialog">
+             
+             <!-- Modal content -->
+                   <div class="modal-content">
+                       <div class="modal-header">
+                         <button type="button" class="close" data-dismiss="modal">&times;</button>
+                       </div>
+                       <div class="modal-body">
+                         <p> {{informa}} </p>
+                       </div>
+                       <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal"> Cerrar </button>
+                       </div>
+                  </div>
+             </div>
+        </div>
+                                        <button type="submit" class="btn btn-tcc left-block" data-toggle="modal" data-target="#miModal" ng-click="frmDatitos.$valid && modificar(datitos)" ng-disabled="isDisabled" ng-model="isDisabled"> Modificar Datos </button>
+                                        
+                                        <button type="submit" class="btn btn-tcc left-block" data-toggle="modal" data-target="#miModal" ng-click="frmDatitos.$valid && borrar(datitos)" ng-disabled="isDisabled" ng-model="isDisabled"> Borrar datos </button>
+
+
+                                        
+            </form>
+         </div>
+                                               
                                             
-                                            
-
-
-                                            <!-- Y PARA EL BOTON Y EL PIE -->
-                                            <button type="submit" class="btn btn-tcc center-block" ng-click="frmDatitos.$valid && salvar(datitos)" ng-disabled="isDisabled" ng-model="isDisabled">Guardar datos </button>
-
-                                            <!--    <button type="submit" class="btn btn-ttc center-block"> Guardar datos </button>-->
-                                            <br>
-
-                                                <p class="pie "></p>
-                                                <div class="centrardiv"><img src="img/Pie.jpg" alt="" /></div>
-
-                                        </form> 
+                                        <!-- <button type="submit" class="btn btn-ttc center-block"> Guardar datos </button>-->
+              <br><br>                          
+       
+            <div>
+             <p class="pie "></p>
+                <div class="centrardiv"><img src="img/Pie.jpg" alt="" /></div>
+             </div>    
+             
+                                        
 
                                         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
                                         <script src="js/personal.js"></script>
 
-                                    </div>
-                                </body>
-                                </html>
+            
+                                
+        </body>
+</html>

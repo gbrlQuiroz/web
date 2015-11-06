@@ -33,7 +33,8 @@
 
 
             };
-            $scope.informa = 'Hola';
+            $scope.informa = 'Sus datos han sido almacenados exitosamente!';
+        #("miModal").show
 
 
 
