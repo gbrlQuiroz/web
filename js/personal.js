@@ -47,11 +47,6 @@
                     //console.log('falló la agregación del registro');
                 });
             };
-<<<<<<< HEAD
-            $scope.informa = 'Sus datos han sido almacenados exitosamente!';
-        #("miModal").show
-=======
->>>>>>> origin/master
 
             $scope.modificar = function (datitos) {
                 $scope.informa = 'entro al mètodo MODIFICAR';
