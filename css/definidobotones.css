@@ -20,30 +20,20 @@ p.encabezado {
 p.pie {
 	position: relative;
 }
-input[type="text"]:focus:invalid {
+//*input[type="text"]:focus:invalid {
 	border: 1px solid #ff920a;
 	box-shadow: 0 0 5px #ff920a;
 }
-
-input[type="email"]:focus:invalid {
-	border: 1px solid #ff920a;
-	box-shadow: 0 0 5px #ff920a;
-}
-
-input[type="number"]:focus:invalid {
-	border: 1px solid #ff920a;
-	box-shadow: 0 0 5px #ff920a;
-}
- 
+*//
 .error {
-    border-color: gray;
+    background-color: greenyellow;
 }
 
 .warning {
     border-color: yellow;
 }
 .css-form input.ng-invalid.ng-dirty {
-            background-color:crimson;
+            background-color:grey;
         }
 
 .css-form input.ng-valid.ng-dirty {
