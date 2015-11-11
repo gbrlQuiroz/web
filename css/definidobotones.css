@@ -13,11 +13,6 @@ p.encabezado {
 	position: relative;
 }
 
-.bg-info {
-  background-color:chocolate;
-  text-align: right;    
-}
-
 .centrardiv {
 	text-align: center;
 }
@@ -38,6 +33,14 @@ input[type="email"]:focus:invalid {
 input[type="number"]:focus:invalid {
 	border: 1px solid #ff920a;
 	box-shadow: 0 0 5px #ff920a;
+}
+ 
+.error {
+    border-color: gray;
+}
+
+.warning {
+    border-color: yellow;
 }
 .css-form input.ng-invalid.ng-dirty {
             background-color:crimson;
