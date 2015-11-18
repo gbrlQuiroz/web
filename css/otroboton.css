@@ -22,3 +22,18 @@
 	width: 180px;
 	height: 40px;
 }
+
+table, th, td {
+          border: 1px solid grey;
+          border-collapse: collapse;
+          padding: 20px;
+         
+      }
+
+table tr:nth-chil(odd) {
+           background-color:;
+      }
+table tr:nth-child(even) {
+           background-color: #ffffff;
+       }
+        

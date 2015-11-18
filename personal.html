@@ -30,27 +30,27 @@
                 <h3>Registrar sus Datos</h3>
                                   
 <div ng-controller="meController">
-        <form novalidate class="css-form" name="frmDatitos" ng-model="datitos">
-             <div class="tab-content">
+        <form novalidate class="css-form" name="frmClave">
+             <div class="row">
                 <div class="col-lg-offset-4">
-                    <div class="col-lg-8">
-                        <div class="form-group col-lg-7"> 
-                            <div ng-class="{ 'has-error': frmDatitos.clave.$invalid, 'has-success': frmDatitos.clave.$valid}">
-                                <label for="clave"> Capture su Clave de Identificación </label>
-                                    <input type="text" class="form-control" name="clave" maxlength="12" ng-model="datitos.clave" autofocus required>
-                                     <div ng-show="frmDatitos.clave.$dirty $$ frmDatitos.clave.$invalid" class="alert alert-danger" role="alert">Campo erroneo </div> 
-                                 </div>
+                        <div class="form-group col-lg-6"> 
+                            <div class="form-group" ng-class="{ 'has-error'.frmclave.clave : $invalid, 'has-success':frmClave.clave.$valid}">
+                              <label for="clave"> Clave de Identificación </label>
+                                <input type="text" class="form-control" name="clave" maxlength="12" ng-model="datitos.clave"  required>
+                                <div ng-show="frmClave.clave.$dirty">
+                                <div ng-show="frmClave.clave.$error.required" class="alert alert-danger"> Campo obligatorio </div>
                                 </div>
-                                  <br>
-    <!-- Hasta que sea valida la clave de identificación se habilita el botón -->                              
-                                           <button class="btn btn-tcc" ng-disabled="frmDatitos.$invalid">Cargar datos </button>
-                                  </div>
-                           </div>
-                       </div>
-              </form>    
-
-            
-                                   
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+    
+                     <!-- Hasta que sea valida la clave de identificación se habilita el botón -->
+                    <button class="btn btn-tcc" ng-disabled="frmDatitos.$invalid">Cargar datos </button>
+                    
+          </form> 
+         <br><br>
+         
                                    
                                    
                  <!-- ++++++++++++ Utiliza un "alarm" de bootstrap y metelo en el controlador, para que funcione /okis 03/11/2015 ---> 
@@ -126,9 +126,9 @@
 
 
 <!--Trigger el modal con el botón -->   
+        <!--<button ng-click="frmDatitos.$valid && guardar(datos)" ng-disabled="isDisabled" ng-model="isDisabled" class="btn btn-tcc btn-lg btn-block ng-pristine ng-valid"> Guardar </button>-->                                
                                         
-                                        
-          <button type="submit" class="btn btn-tcc left-block" ng-click="submitForm(datitos)" ng-disabled="!frmDatitos.$valid">Guardar datos </button>
+<button type="submit" class="btn btn-tcc left-block" ng-click="submitForm(datitos)" ng-disabled="frmDatitos.$valid&& salvar(datitos)" ng-disabled="isDisabled" ng-model="isDisabled">Guardar datos </button>
                                         
     <!-- Modal -->                    
          <div class="modal fade" id="miModal" role="dialog">
@@ -166,6 +166,13 @@
 
             <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
             <script src="js/personal.js"></script>
+    <div>
+      <ul>
+          <li ng-repeat="datitos in datos">{{}}</li>
+          <a href="{{datitos.nombre}}">{{datidos.nombre}}</a>
+        </ul>
+    </div>
          </div>
+         
     </body>
 </html>
