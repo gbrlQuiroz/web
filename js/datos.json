@@ -1,0 +1,36 @@
+[{
+        "id": 1,
+        "nombre": "Gabriel Quiroz Olvera",
+        "fecNac": "1976-04-06",
+        "estatura": "1.633333",
+        "peso": "66",
+        "titulo": "MC"
+    }, {
+        "id": 2,
+        "nombre": "Martin Omar Arzate Monter",
+        "fecNac": "1979-02-12",
+        "estatura": "1.63",
+        "peso": "70",
+        "titulo": "LIC"
+    }, {
+        "id": 3,
+        "nombre": "Arturo Ortiz Briones",
+        "fecNac": "1979-12-25",
+        "estatura": "1.63",
+        "peso": "90",
+        "titulo": "Tecnico"
+    }, {
+        "id": 4,
+        "nombre": "Ivan Y. Hernandez",
+        "fecNac": "2000-12-12",
+        "estatura": "1.85",
+        "peso": "84",
+        "titulo": "ING"
+    }, {
+        "id": 5,
+        "nombre": "Maria A. Ruiz Lara",
+        "fecNac": "1973-06-06",
+        "estatura": "1.69",
+        "peso": "69",
+        "titulo": "ING"
+    }]
