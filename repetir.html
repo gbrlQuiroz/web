@@ -41,7 +41,7 @@
             </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="x in datos | orderBy:'-nombre'" style="background-color:{{$even?'white':'#f1e767'}}">
+          <tr ng-repeat="x in datos | orderBy:'nombre'">
               <td>{{x.id}}</td>
               <td>{{x.nombre}}</td>
               <td>{{x.fecNac}}</td>
@@ -54,11 +54,8 @@
     </table>
    </div>
   </div>
-    <ul>
-        <li </li>
-     </ul>
     
-    <!--}}--> 
+    
             <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
             <script src="js/personal1.js"></script>
     <div>

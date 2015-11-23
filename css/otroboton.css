@@ -23,14 +23,33 @@
 	height: 40px;
 }
 
-table, th, td {
+table, th {
           border: 1px solid grey;
           border-collapse: collapse;
-          padding: 20px;
-         
-      }
+          width: 900px;
+          padding: 10px;
+          text-align: center;
+       
+         }
 
-table tr:nth-chil(odd) {
+table td {
+          border: 1px solid grey;
+          width: 900px;
+          padding: 20px;
+}
+
+table tr:hover {
+          background: #cccccc;
+}
+
+table td:hover {
+          background: #000000;
+          color:#ffffff;
+}
+    
+
+
+//*table tr:nth-chil(odd) {
            background-color:;
       }
 table tr:nth-child(even) {
