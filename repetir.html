@@ -19,13 +19,19 @@
          
          <div>
              <p class="encabezado"></p>
-                <div class="centrardiv"><img src="img/encabezado.png" alt="" /></div>
-         </div>       
-  <h3> Repetición de Datos, Creación de Tablas y Filtros </h3>        
+             <div class="centrardiv"><img src="img/encabezado.png"></div>
+        </div>  
+    
+                  
+  <h3> Repetición de Datos, Creación de Tablas y Filtros </h3> 
+    <br><br>
+    
 <div ng-controller="myController">
-    <table>
+  <div class="table-responsive">
+    <div style="text-align:center;">
+     <table style="margin: 0 auto;">
         <thead>
-         <tr>
+            <tr>
              <th>ID</th>
              <th>Nombre</th>
              <th>Fecha Nacimiento</th>
@@ -35,7 +41,7 @@
             </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="x in datos" style="background-color:{{$even?'white':''}}">
+          <tr ng-repeat="x in datos | orderBy:'-nombre'" style="background-color:{{$even?'white':'#f1e767'}}">
               <td>{{x.id}}</td>
               <td>{{x.nombre}}</td>
               <td>{{x.fecNac}}</td>
@@ -44,9 +50,10 @@
               <td>{{x.titulo}}</td>
            </tr>  
         </tbody>
-        
+    
     </table>
-   
+   </div>
+  </div>
     <ul>
         <li </li>
      </ul>
