@@ -33,9 +33,9 @@ p.pie {
     border-color: yellow;
 }
 .css-form input.ng-invalid.ng-dirty {
-            background-color:grey;
+            background-color:darkgray;
         }
 
 .css-form input.ng-valid.ng-dirty {
-            background-color:darkkhaki;
+            background-color:darkolivegreen;
         }
