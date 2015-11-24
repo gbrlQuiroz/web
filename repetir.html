@@ -15,7 +15,7 @@
 
 
 
-<body ng-app="persona1">
+<body ng-app="personal">
          
          <div>
              <p class="encabezado"></p>
@@ -41,7 +41,7 @@
             </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="x in datos | orderBy:'nombre'">
+          <tr ng-repeat="x in datos">
               <td>{{x.id}}</td>
               <td>{{x.nombre}}</td>
               <td>{{x.fecNac}}</td>
@@ -57,7 +57,7 @@
     
     
             <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-            <script src="js/personal1.js"></script>
+            <script src="js/repetir.js"></script>
     <div>
          
    </body>
