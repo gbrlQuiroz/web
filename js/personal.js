@@ -18,12 +18,31 @@
                 return $http.put(uri, datos);
                 //return $http.put(id,datos);
             };
+            response.getRaro = function () {
+                return $http.get('js/datos.json');
+            };
             return response;
         }]);
 
 
 
     app.controller('meController', ['$scope', 'RESTful', function ($scope, RESTful) {
+
+            /*+++++++++++++++++++++++
+             * 
+             ++++++++++++++++++++++*/
+            cargarRaro();
+            function cargarRaro() {
+                RESTful.getRaro()
+                        .success(function (datosCargados) {
+                            console.log('------' + datosCargados);
+                            $scope.datosRaros = datosCargados;
+                        });
+
+            }
+            ;
+/*
+
 
             cargarDato(1);
             function cargarDato(id) {
@@ -32,7 +51,8 @@
                             //console.log("------- " + datosCargados);
                             $scope.datitos = datosCargados;
                         });
-            };
+            }
+            ;
 
             $scope.salvar = function (datitos) {
                 $scope.informa = 'entro al método SALVAR';
@@ -62,7 +82,7 @@
 
             };
 
-
+*/
         }]);
 
 })();
