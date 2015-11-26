@@ -30,15 +30,22 @@
                 <h3>Registrar sus Datos</h3>
                                   
 <div ng-controller="meController">
-        <form novalidate class="css-form" name="frmClave">
+        <form name="frmClave" id="frmClave" class="css-form" novalidate>
              <div class="row">
                 <div class="col-lg-offset-4">
                         <div class="form-group col-lg-6"> 
-                            <div class="form-group" ng-class="{ 'has-error'.frmclave.clave : $invalid, 'has-success':frmClave.clave.$valid}">
+                            <div class="form-group has-error"> <!--ng-class="{ 'has-error'.frmclave.clave : $invalid && 'has-success':frmClave.clave.$valid}"><!--ng-class="{ 'has-error'.frmclave.clave.$invalid && 'frmClave.clave.$dirty}" <div class="input-group-addon">  >-->
                               <label for="clave"> Clave de Identificación </label>
-                                <input type="text" class="form-control" name="clave" maxlength="12" ng-model="datitos.clave"  required>
-                                <div ng-show="frmClave.clave.$dirty">
-                                <div ng-show="frmClave.clave.$error.required" class="alert alert-danger"> Campo obligatorio </div>
+                                <div class="input-group">
+                                   <div class="input-group-addon">
+                                    <i class="glyphicon glyphicon-pencil"></i>
+                                    </div>        
+                                  <input ng-model="datitos.clave" class="form-control" type="text" name="clave" maxlength="10" placeholder="Escriba su clave ej:rulai12345" required/>
+                                  <div class="glyphicon glyphicon-remove form-control-feedback"></div>
+                                </div>
+                                <span class="help-block">El dato es requerido</span>
+                               <!-- <div ng-show="frmClave.clave.$dirty">-->
+                                <!--<div ng-show="frmClave.clave.$error.required && frmClave.clave.$dirty" class="alert alert-danger"> Se requiere su clave </div> -->
                                 </div>
                             </div>
                         </div>
@@ -47,7 +54,11 @@
     
                      <!-- Hasta que sea valida la clave de identificación se habilita el botón -->
                     <button class="btn btn-tcc" ng-disabled="frmDatitos.$invalid">Cargar datos </button>
-                    
+                            <script>
+                                  $(document).ready(function(){
+                                  $('[data-toggle="popover"]').popover();   
+                                   });
+                            </script>      
           </form> 
          <br><br>
          
@@ -59,7 +70,7 @@
             
  <!-------  Formulario captura de datos y validación de datos/campos  ----->
             
-            <form novalidate class="css-form" name="frmDatitos">
+            <form name="frmDatitos" class="css-form" novalidate>
                  <div class="container">
                     <div class="row">
                         <div class="col-lg-offset-3">
@@ -67,7 +78,7 @@
                                 <div class="form-group col-lg-12">
                                     <div class="form-group" ng-class="{ 'has-error'.frmDatitos.nombre : $invalid, 'has-success':frmDatitos.nombre.$valid}">
                                       <label> Nombre </label>                         
-                                        <input type="text" class="form-control" name="nombre" style="text-transform:uppercase;" onkeyup="javascript:this.value = this.value.toUpperCase();" maxlength="40" ng-model="datitos.nombre" required>
+                                        <input type="text" class="form-control" name="nombre" style="text-transform:uppercase;" onkeyup="javascript:this.value = this.value.toUpperCase();" maxlength="40" ng-model="datitos.nombre" ng-pattern="/^[a-zA-Z]*$/" required/>
                                             <div ng-show="frmDatitos.nombre.$dirty">
                                             <div ng-show="frmDatitos.nombre.$error.required" class="alert alert-danger"> Campo obligatorio </div>
                                             </div>
@@ -88,7 +99,7 @@
                                  <div class="form-group col-lg-6">
                                     <div class="form-group" ng-class="{ 'has-error'.frmDatitos.estatura : $invalid, 'has-success':frmDatitos.estatura.$valid}">
                                         <label for="estatura"> Estatura </label>
-                                            <input type="number" class="form-control" name="estatura" maxlength="5" ng-model="datitos.estatura" placeholder="" required>
+                                            <input type="number" class="form-control" name="estatura" min="3" ng-model="datitos.estatura" placeholder="" required>
                                             <div ng-show="frmDatitos.estatura.$dirty">
                                             <div ng-show="frmDatitos.estatura.$error.required" class="alert alert-danger"> Dato obligatorio </div>
                                             </div>

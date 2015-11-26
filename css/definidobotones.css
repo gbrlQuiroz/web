@@ -20,22 +20,25 @@ body {
 p.pie {
 	position: relative;
 }
-//*input[type="text"]:focus:invalid {
+input[type="text"]:focus:invalid {
 	border: 1px solid #ff920a;
 	box-shadow: 0 0 5px #ff920a;
 }
-*//
 .error {
     background-color: greenyellow;
 }
 
-.warning {
+//*.warning {
     border-color: yellow;
-}
+} */
+
 .css-form input.ng-invalid.ng-dirty {
-            background-color:darkgray;
+            background-color:lightgray;
         }
 
 .css-form input.ng-valid.ng-dirty {
-            background-color:darkolivegreen;
+            background-color:greenyellow;
         }
+.css-form .alert {
+    background-color: red;
+}
