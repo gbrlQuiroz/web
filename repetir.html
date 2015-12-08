@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" >
 
     <head>
         <meta charset="UTF-8">
@@ -41,14 +41,22 @@
             </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="x in datos">
-              <td>{{x.id}}</td>
-              <td>{{x.nombre}}</td>
-              <td>{{x.fecNac}}</td>
-              <td>{{x.estatura}}</td>
-              <td>{{x.peso}}</td>
-              <td>{{x.titulo}}</td>
-           </tr>  
+          <tr ng-repeat="data in datos">
+              <td>{{data.id}}</td>
+              <td>{{data.nombre}}</td>
+              <td>{{data.fecNac}}</td>
+              <td>{{data.estatura}}</td>
+              <td>{{data.peso}}</td>
+              <td>{{data.titulo}}</td>
+           </tr> 
+            <tr ng-repeat="data in datosResource">
+              <td>{{data.id}}</td>
+              <td>{{data.nombre}}</td>
+              <td>{{data.fecNac}}</td>
+              <td>{{data.estatura}}</td>
+              <td>{{data.peso}}</td>
+              <td>{{data.titulo}}</td>
+           </tr> 
         </tbody>
     
     </table>
@@ -57,7 +65,8 @@
     
     
             <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-            <script src="js/repetir.js"></script>
+            <script src="js/inyectar.js"></script>
+            <script type="text/javascript" src="js/angular_resource.js"></script>
     <div>
          
    </body>
