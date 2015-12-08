@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('personal', []);
+    var app = angular.module('repetir', []);
 
     app.factory('RESTful', ['$http', function ($http) {
             var response = {};
@@ -26,18 +26,19 @@
 
 
 
-    app.controller('meController', '$scope', 'RESTful', function ($scope, RESTful){
+    app.controller('meController', ['$scope', 'RESTful', function ($scope, RESTful) {
 
-            /*+++++++++++++++++++++++
-             * 
-             ++++++++++++++++++++++*/
-            cargarRaro();
-            function cargarRaro() {
-                RESTful.getRaro()
-                        .success(function (datosCargados) {
-                            console.log('------' + datosCargados);
-                            $scope.datos = datosCargados;
-                        });
-            };
-    });
-});
+        /*+++++++++++++++++++++++
+         * 
+         ++++++++++++++++++++++*/
+        cargarRaro();
+        function cargarRaro() {
+            RESTful.getRaro()
+                    .success(function (datosCargados) {
+                        console.log('------' + datosCargados);
+                        $scope.datos = datosCargados;
+                    });
+        }
+        ;
+    }]);
+})();
