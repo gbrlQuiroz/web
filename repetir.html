@@ -1,78 +1,80 @@
 <!DOCTYPE html>
 <html lang="es" ng-app="repetir">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Iteracion</title>
-        <link href="css/lib/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="css/lib/bootstrap-theme.min.css" rel="stylesheet">
-        <link href="css/definidobotones.css" rel="stylesheet">
-        <link href="css/otroboton.css" rel="stylesheet">
 
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iteracion</title>
+    <link href="css/lib/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/lib/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/definidobotones.css" rel="stylesheet">
+    <link href="css/otroboton.css" rel="stylesheet">
+
+</head>
 
 
 
-    <body>
+<body>
 
-        <div>
-            <p class="encabezado"></p>
-            <div class="centrardiv"><img src="img/encabezado.png" alt="encabezado"></div>
-        </div>  
+    <div>
+        <p class="encabezado"></p>
+        <div class="centrardiv"><img src="img/encabezado.png" alt="encabezado"></div>
+    </div>
 
-    
-                  
-  <h3> Repetición de Datos, Creación de Tablas y Filtros </h3> 
-    <br><br>
-    
-<div ng-controller="meController">
-  <div class="table-responsive">
-    <div style="text-align:center;">
-     <table style="margin: 0 auto;">
-        <thead>
-            <tr>
-             <th>ID</th>
-             <th>Nombre</th>
-             <th>Fecha Nacimiento</th>
-             <th>Estatura</th>
-             <th>Peso</th>
-             <th>Titulo</th>
-            </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="data in datos">
-              <td>{{data.id}}</td>
-              <td>{{data.nombre}}</td>
-              <td>{{data.fecNac}}</td>
-              <td>{{data.estatura}}</td>
-              <td>{{data.peso}}</td>
-              <td>{{data.titulo}}</td>
-           </tr> 
-            <tr ng-repeat="data in datosResource">
-              <td>{{data.id}}</td>
-              <td>{{data.nombre}}</td>
-              <td>{{data.fecNac}}</td>
-              <td>{{data.estatura}}</td>
-              <td>{{data.peso}}</td>
-              <td>{{data.titulo}}</td>
-           </tr> 
-        </tbody>
-    
-    </table>
-   </div>
-  </div>
+
+
+    <h3> Repetición de Datos, Creación de Tablas y Filtros </h3>
+    <br>
+    <br>
+
+    <div ng-controller="meController">
+        <div class="table-responsive">
+            <div style="text-align:center;">
+                <table style="margin: 0 auto;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Estatura</th>
+                            <th>Peso</th>
+                            <th>Titulo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="data in datos">
+                            <td>{{data.id}}</td>
+                            <td>{{data.nombre}}</td>
+                            <td>{{data.fecNac}}</td>
+                            <td>{{data.estatura}}</td>
+                            <td>{{data.peso}}</td>
+                            <td>{{data.titulo}}</td>
+                        </tr>
+                        <tr ng-repeat="data in datosResource">
+                            <td>{{data.id}}</td>
+                            <td>{{data.nombre}}</td>
+                            <td>{{data.fecNac}}</td>
+                            <td>{{data.estatura}}</td>
+                            <td>{{data.peso}}</td>
+                            <td>{{data.titulo}}</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
         </div>
-    
-    
-            
+    </div>
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-animate.js"></script>
-        <script src="js/lib/jquery-2.1.4.min.js"></script>
-        <script src="js/lib/bootstrap.min.js"></script>
-        <script src="js/repetir.js"></script>
 
 
-    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-animate.js"></script>
+    <script src="js/lib/jquery-2.1.4.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/repetir.js"></script>
+
+
+</body>
+
 </html>
