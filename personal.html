@@ -1,184 +1,201 @@
 <!DOCTYPE html>
 <html ng-app="personal" lang="es">
 
-    <head>
-        <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Datos Personales</title>
-                <link href="css/lib/bootstrap.min.css" rel="stylesheet" media="screen">
-                <link href="css/lib/bootstrap-theme.min.css" rel="stylesheet">
-                <link href="css/definidobotones.css" rel="stylesheet">
-                <link href="css/otroboton.css" rel="stylesheet">
-                <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-                <script src="js/lib/bootstrap.min.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Personales</title>
+    <link href="css/lib/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/lib/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/definidobotones.css" rel="stylesheet">
+    <link href="css/otroboton.css" rel="stylesheet">
 
-                            <!-- ************los atributos de tu modelo deben ser:  nombre, fecNac, estatura, peso, titulo; tal como estan escritos/ Se realizo el cambio  -->
+</head>
 
-     <body ng-app>
-         
-         <div>
-             <p class="encabezado"></p>
-                <div class="centrardiv"><img src="img/encabezado.png" alt="" /></div>
-         </div>                           
-                                    
-                                   <!-- ++++++++++++ Utiliza un "alarm" de bootstrap y metelo en el controlador, para que funcione 
+<!-- ************los atributos de tu modelo deben ser:  nombre, fecNac, estatura, peso, titulo; tal como estan escritos/ Se realizo el cambio  -->
+
+<body>
+
+    <div>
+        <p class="encabezado"></p>
+        <div class="centrardiv"><img src="img/encabezado.png" alt="" /></div>
+    </div>
+
+    <!-- ++++++++++++ Utiliza un "alarm" de bootstrap y metelo en el controlador, para que funcione 
                                    <div class="text-success bg-info text-right">
                                         <h5> {{informa}} </h5>
-                                    </div>   -->     
-                                    
-                <h3>Registrar sus Datos</h3>
-                                  
-<div ng-controller="meController">
+                                    </div>   -->
+
+    <h3>Registrar sus Datos</h3>
+
+    <div ng-controller="meController">
         <form name="frmClave" id="frmClave" class="css-form" novalidate>
-             <div class="row">
+            <div class="row">
                 <div class="col-lg-offset-4">
-                        <div class="form-group col-lg-6"> 
-                            <div class="form-group" ng-class="{'has-error'.frmclave.clave : $invalid && 'has-success':frmClave.clave.$valid}">
-                                <!--ng-class="{ 'has-error'.frmclave.clave.$invalid && 'frmClave.clave.$dirty}" <div class="input-group-addon">  >-->
-                                <label for="clave"> Clave de Identificación </label>
-                                 <input ng-model="datitos.clave" class="form-control" type="text" name="clave" maxlength="10" placeholder="Escriba su clave ej:rulai12345" required>
-                                    <div class="alert alert-danger" role="alert">
-                                       <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr.only"> Error </span> Capture correctamente su Clave
-                                    </div>
+                    <div class="form-group col-lg-6">
+                        <div class="form-group" ng-class="{'has-error'.frmclave.clave : $invalid && 'has-success':frmClave.clave.$valid}">
+                            <!--ng-class="{ 'has-error'.frmclave.clave.$invalid && 'frmClave.clave.$dirty}" <div class="input-group-addon">  >-->
+                            <label for="clave"> Clave de Identificación </label>
+                            <input ng-model="datitos.clave" class="form-control" type="text" name="clave" maxlength="10" placeholder="Escriba su clave ej:rulai12345" required>
+                            <div class="alert alert-danger" role="alert">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr.only"> Error </span> Capture correctamente su Clave
                             </div>
-                                     
-                                <!--    <span class="form-control-feedback glyphicon glyphicon-remove"></span>-->
-                                 </div>
-                              </div>
-                                <!--<span class="help-block">El dato es requerido</span>-->
-                               <!-- <div ng-show="frmClave.clave.$dirty">-->
-                                <!--<div ng-show="frmClave.clave.$error.required && frmClave.clave.$dirty" class="alert alert-danger"> Se requiere su clave </div> -->
+                        </div>
+
+                        <!--    <span class="form-control-feedback glyphicon glyphicon-remove"></span>-->
+                    </div>
+                </div>
+                <!--<span class="help-block">El dato es requerido</span>-->
+                <!-- <div ng-show="frmClave.clave.$dirty">-->
+                <!--<div ng-show="frmClave.clave.$error.required && frmClave.clave.$dirty" class="alert alert-danger"> Se requiere su clave </div> -->
+            </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Hasta que sea valida la clave de identificación se habilita el botón -->
+    <button class="btn btn-tcc" ng-disabled="frmDatitos.$invalid">Continuar</button>
+
+    </form>
+    <br>
+    <br>
+
+
+
+    <!-- ++++++++++++ Utiliza un "alarm" de bootstrap y metelo en el controlador, para que funcione /okis 03/11/2015 --->
+
+    <!-- Se continua aplicando diversas formas de validación 10/12/2015 -->
+
+    <!-- ************ el nombre del formulario lleva el prefijo "frm" -->
+
+    <!--------------------  Formulario captura de datos y validación de datos/campos  ---------------->
+
+    <form name="frmDatitos" class="css-form" novalidate>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-offset-4">
+                    <div class="col-lg-8">
+                        <div class="form-group col-lg-10">
+                            <div class="form-group">
+                                <!--ng-class="{ 'has-error'.frmDatitos.nombre : $invalid, 'has-success':frmDatitos.nombre.$valid}">
+                                <label> Nombre </label>-->
+                                <!--<input tabindex="1" autofocus="true" class="form-control" data-val="true" data-val-length="Máximo 30 caracteres" data-val-length-max="30" data-val-required="El campo es obligatorio" id="nombre" maxlength="30" name="nombre" placeholder="Escriba su nombre y apellidos" required="required" style="text-transform:uppercase" type="text" value>
+                                <!--<div class="rojo">
+                                    <span class="field-validation-valid" data-valmsg-for="nombre" data-valmsg-replace="true"></span>
+                                </div>-->
+
+                                <input tabindex="1" autofocus="true" id="nombre" type="text" class="form-control" name="nombre" style="text-transform:uppercase;" onkeyup="javascript:this.value = this.value.toUpperCase();" maxlength="40" placeholder="Escriba su nombre y apellidos" ng-model="datitos.nombre" required>
+
+                                <!-- <span class="field-validation-valid" data-valmsg-for="nombre" data-valmsg-replace="true" data-val-regex-pattern="^[a-zñ&,A-ZÑ&]{40}$"></span>-->
+
+                                <div ng-show="frmDatitos.nombre.$dirty">
+                                    <div class="rojo" ng-show="frmDatitos.nombre.$error.required" data-val-regex-pattern="^[a-zñ&,A-ZÑ&]{40}$" class="alert alert-danger">Escriba correctamente </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                  </div>
-    
-                     <!-- Hasta que sea valida la clave de identificación se habilita el botón -->
-                    <button class="btn btn-tcc" ng-disabled="frmDatitos.$invalid">Cargar datos </button>
-                                
-          </form> 
-         <br><br>
-         
-                                   
-                                   
-                 <!-- ++++++++++++ Utiliza un "alarm" de bootstrap y metelo en el controlador, para que funcione /okis 03/11/2015 ---> 
-                                   
-<!-- ************ el nombre del formulario lleva el prefijo "frm" --> 
-            
- <!-------  Formulario captura de datos y validación de datos/campos  ----->
-            
-            <form name="frmDatitos" class="css-form" novalidate>
-                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-offset-3">
-                            <div class="col-lg-8">
-                                <div class="form-group col-lg-12">
-                                    <div class="form-group" ng-class="{ 'has-error'.frmDatitos.nombre : $invalid, 'has-success':frmDatitos.nombre.$valid}">
-                                      <label> Nombre </label>                         
-                                        <input type="text" class="form-control" name="nombre" style="text-transform:uppercase;" onkeyup="javascript:this.value = this.value.toUpperCase();" maxlength="40" ng-model="datitos.nombre" ng-pattern="/^[a-zA-Z]*$/" required>
-                                            <div ng-show="frmDatitos.nombre.$dirty">
-                                            <div ng-show="frmDatitos.nombre.$error.required" class="alert alert-danger"> Capture correctamente </div>
-                                            <span class="glyphicon glyphicon-remove"></span>    
-                                            </div>
-                                    </div>
+
+
+                        <!--------------- Del campo fecha de nacimiento ------------------>
+                        <div class="form-group col-lg-10">
+                            <div class="form-group" ng-class="{ 'has-error'.frmDatitos.fecNac : $invalid, 'has-success':frmDatitos.fecNac.$valid}">
+                                <!--  <label for="fecNac">Fecha de nacimiento </label>-->
+                                <input type="date" class="form-control" name="fecNac" ng-model="datitos.fecNac" required>
+                                <div ng-show="frmDatitos.date.$dirty">
+                                    <div ng-show="frmDatitos.date.$error.required" class="alert alert-danger"> Seleccione o escriba correctamente la fecha </div>
                                 </div>
-        <!-- Del campo fecha de nacimiento------------------->                    
-                                <div class="form-group col-lg-6">
-                                  <div class="form-group" ng-class="{ 'has-error'.frmDatitos.fecNac : $invalid, 'has-success':frmDatitos.fecNac.$valid}">
-                                       <label for="fecNac">Fecha de nacimiento </label>
-                                          <input type="date" class="form-control" name="fecNac" ng-model="datitos.fecNac" required>
-                                              <div ng-show="frmDatitos.date.$dirty">
-                                              <div ng-show="frmDatitos.date.$error.required" class="alert alert-danger"> Seleccione o escriba correctamente la fecha </div>
-                                              </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <!-- Del campo estatura ------------------------------>
+
+                        <div class="form-group col-lg-10">
+                            <div class="form-group" ng-class="{ 'has-error'.frmDatitos.estatura : $invalid, 'has-success':frmDatitos.estatura.$valid}">
+                                <label for="estatura"> Estatura </label>
+                                <input type="number" class="form-control" name="estatura" min="3" ng-model="datitos.estatura" placeholder="" required>
+                                <div ng-show="frmDatitos.estatura.$dirty">
+                                    <div ng-show="frmDatitos.estatura.$error.required" class="alert alert-danger"> Dato obligatorio </div>
                                 </div>
-        <!-- Del campo estatura ------------------------------>                        
-                                     
-                                 <div class="form-group col-lg-6">
-                                    <div class="form-group" ng-class="{ 'has-error'.frmDatitos.estatura : $invalid, 'has-success':frmDatitos.estatura.$valid}">
-                                        <label for="estatura"> Estatura </label>
-                                            <input type="number" class="form-control" name="estatura" min="3" ng-model="datitos.estatura" placeholder="" required>
-                                            <div ng-show="frmDatitos.estatura.$dirty">
-                                            <div ng-show="frmDatitos.estatura.$error.required" class="alert alert-danger"> Dato obligatorio </div>
-                                            </div>
-                                     </div>
-                                  </div>
-         <!-- Del campo peso --------------------------------->                        
-                                    <div class="form-group" ng-class="{ 'has-error'.frmDatitos.peso : $invalid, 'has-success':frmDatitos.peso.$valid}">
-                                       <div class="form-group col-lg-6">
-                                          <label for="peso"> Peso </label>
-                                            <input type="number" class="form-control" name="peso" maxlength="10" minlength="0" ng-model="datitos.peso"  placeholder="" required/>
-                                                <div ng-show="frmDatitos.peso.$dirty">
-                                                <div ng-show="frmDatitos.peso.$error.required" class="alert alert-danger"> Dato obligatorio </div>
-                                              </div>
-                                        </div>
-                                </div>    
-         <!---Del campo titulo -------------------------------->                        
-                                    <div class="form-group" ng-class="{ 'has-error'.frmDatitos.titulo : $invalid, 'has-success':frmDatitos.titulo.$valid}">
-                                        <div class="form-group col-lg-6">
-                                            <label for="titulo"> Titulo </label>
-                                                <input type="text" class="form-control" name="titulo" style="text-transform:uppercase;" onkeyup="javascript:this.value = this.value.toUpperCase();" maxlength="40" ng-model="datitos.titulo" required/>
-                                                  <div ng-show="frmDatitos.titulo.$dirty">
-                                                  <div ng-show="frmDatitos.titulo.$error.required" class="alert alert-danger"> Dato obligatorio </div>
-                                                                
-                                                  </div>
-                                         </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <!-- Del campo peso --------------------------------->
+                        <div class="form-group" ng-class="{ 'has-error'.frmDatitos.peso : $invalid, 'has-success':frmDatitos.peso.$valid}">
+                            <div class="form-group col-lg-10">
+                                <label for="peso"> Peso </label>
+                                <input type="number" class="form-control" name="peso" maxlength="10" minlength="0" ng-model="datitos.peso" placeholder="" required/>
+                                <div ng-show="frmDatitos.peso.$dirty">
+                                    <div ng-show="frmDatitos.peso.$error.required" class="alert alert-danger"> Dato obligatorio </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!---Del campo titulo -------------------------------->
+                        <div class="form-group" ng-class="{ 'has-error'.frmDatitos.titulo : $invalid, 'has-success':frmDatitos.titulo.$valid}">
+                            <div class="form-group col-lg-10">
+                                <label for="titulo"> Titulo </label>
+                                <input type="text" class="form-control" name="titulo" style="text-transform:uppercase;" onkeyup="javascript:this.value = this.value.toUpperCase();" maxlength="40" ng-model="datitos.titulo" required/>
+                                <div ng-show="frmDatitos.titulo.$dirty">
+                                    <div ng-show="frmDatitos.titulo.$error.required" class="alert alert-danger"> Dato obligatorio </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-         <br>
-
-                                            <!-- ++++++++++++CREAR CAMPO OCULTO CON EL ID+++++++++++-->
-                                            
-
-
-<!--Trigger el modal con el botón -->   
-        <!--<button ng-click="frmDatitos.$valid && guardar(datos)" ng-disabled="isDisabled" ng-model="isDisabled" class="btn btn-tcc btn-lg btn-block ng-pristine ng-valid"> Guardar </button>-->                                
-                                        
-<button type="submit" class="btn btn-tcc left-block" ng-click="submitForm(datitos)" ng-disabled="frmDatitos.$valid&& salvar(datitos)" ng-disabled="isDisabled" ng-model="isDisabled">Guardar datos </button>
-                                        
-    <!-- Modal -->                    
-         <div class="modal fade" id="miModal" role="dialog">
-             <div class="modal-dialog">
-             
-             <!-- Modal content -->
-                   <div class="modal-content">
-                       <div class="modal-header">
-                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                       </div>
-                       <div class="modal-body">
-                         <p> {{informa}} </p>
-                       </div>
-                       <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal"> Cerrar </button>
-                       </div>
-                  </div>
-             </div>
         </div>
-          <button type="submit" class="btn btn-tcc left-block" data-toggle="modal" data-target="#miModal" ng-click="frmDatitos.$valid && modificar(datitos)" ng-disabled="isDisabled" ng-model="isDisabled"> Modificar Datos </button>
-                                        
-          <button type="submit" class="btn btn-tcc left-block" data-toggle="modal" data-target="#miModal" ng-click="frmDatitos.$valid && borrar(datitos)" ng-disabled="isDisabled" ng-model="isDisabled"> Borrar datos </button>
+        <br>
 
-                                    
-            </form>
-        <br>                                       
-                                            
-                                        <!-- <button type="submit" class="btn btn-ttc center-block"> Guardar datos </button>-->
-            <div>
-             <p class="pie "></p>
-                <div class="centrardiv"><img src="img/Pie.jpg" alt="" /></div>
-             </div>    
-             
-                                        
+        <!-- ++++++++++++CREAR CAMPO OCULTO CON EL ID+++++++++++-->
 
-            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-            <script src="js/personal.js"></script>
-    
-         </div>
-         
-    </body>
+
+
+        <!--Trigger el modal con el botón -->
+        <!--<button ng-click="frmDatitos.$valid && guardar(datos)" ng-disabled="isDisabled" ng-model="isDisabled" class="btn btn-tcc btn-lg btn-block ng-pristine ng-valid"> Guardar </button>-->
+
+        <button type="submit" class="btn btn-tcc left-block" ng-click="submitForm(datitos)" ng-disabled="frmDatitos.$valid&& salvar(datitos)" ng-disabled="isDisabled" ng-model="isDisabled">Guardar datos </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="miModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p> {{informa}} </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"> Cerrar </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-tcc left-block" data-toggle="modal" data-target="#miModal" ng-click="frmDatitos.$valid && modificar(datitos)" ng-disabled="isDisabled" ng-model="isDisabled"> Modificar Datos </button>
+
+        <button type="submit" class="btn btn-tcc left-block" data-toggle="modal" data-target="#miModal" ng-click="frmDatitos.$valid && borrar(datitos)" ng-disabled="isDisabled" ng-model="isDisabled"> Borrar datos </button>
+
+
+    </form>
+    <br>
+
+    <!-- <button type="submit" class="btn btn-ttc center-block"> Guardar datos </button>-->
+    <div>
+        <p class="pie "></p>
+        <div class="centrardiv"><img src="img/Pie.jpg" alt="" /></div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="js/personal.js"></script>
+    <script type="text/javascript"></script>
+
+
+
+    </div>
+
+</body>
+
 </html>

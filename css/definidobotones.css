@@ -1,12 +1,13 @@
-h5,h3 {
-    color:darkorange;
+h5,
+h3 {
+    color: darkorange;
     text-align: center;
 }
 
 body {
-	color:darkorange;
+    color: darkorange;
     text-align: center;
-    font-size: 18px;    
+    font-size: 18px;
 }
 
 .encabezado {
@@ -14,31 +15,36 @@ body {
 }
 
 .centrardiv {
-	text-align: center;
+    text-align: center;
 }
 
 p.pie {
-	position: relative;
+    position: relative;
 }
+
 input[type="text"]:focus:invalid {
-	border: 1px solid #ff920a;
-	box-shadow: 0 0 5px #ff920a;
+    border: 1px solid #ff920a;
+    box-shadow: 0 0 5px #ff920a;
 }
+
 .error {
     background-color: greenyellow;
 }
 
+.rojo {
+    color: red;
+}
+
 //*.warning {
-    border-color: yellow;
-} */
+border-color: yellow;
 
-.css-form input.ng-invalid.ng-dirty {
-            background-color:lightgray;
-        }
-
+}
+*/ .css-form input.ng-invalid.ng-dirty {
+    background-color: lightgray;
+}
 .css-form input.ng-valid.ng-dirty {
-            background-color:greenyellow;
-        }
+    background-color: greenyellow;
+}
 .css-form .alert {
     background-color: red;
 }
